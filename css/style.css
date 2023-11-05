@@ -1886,18 +1886,18 @@ span.color {
  /* Comman to all parallax */
 .parallax-1,
 .parallax-2 {
-	background-position: 40% 0;
+	background-position: 20% 0;
 	 background-size: cover;
 	 background-repeat: no-repeat;
 	 background-attachment: fixed;
 	 width: 100%;
-	 height: 100%;
+	 height: auto;
 	 overflow-x: hidden;
 	 overflow-y: hidden;
 	 /* vertical-align: middle; */
-	 z-index: -1;
+	 z-index: 1;
 	 display: block;
-	 position: relative;
+	 /* position: relative; */
 	 opacity: 1;
 }
 
@@ -1916,7 +1916,7 @@ span.color {
 		background-image: url(../img/logo-dark-mobile.png);		
 	}
 	.parallax-2 {
-		background-image: url(../img/06.jpg);
+		background-image: url(../img/06-mobile.jpg);
 	}
 	.parallax-1,
 	.parallax-2 {
