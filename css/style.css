@@ -254,7 +254,7 @@ padding: 60px 0 !important;
 }
 .dishes{
 	
-background: #ffffff;
+/* background: #ffffff; */
 	
 padding: 35px 0;
 }
@@ -1862,16 +1862,77 @@ span.color {
     opacity: .4;
 }
 .form-img {
-	background-image: url(../img/06.jpg);	
+	/* background-image: url(../img/06.jpg);	 */
 	border-radius: 17px;
 	background-repeat: no-repeat;
 	background-size: cover;
 }
 .form-img-2 {
-	background-image: url(../img/06.jpg);
+	/* background-image: url(../img/06.jpg); */
 	background-repeat: no-repeat;
 	background-size: cover;
 }
 .text-white {
 	color: #ffffff;
 }
+/* ########### Parallax Starts ######### */
+.parallax-1 {
+	background-image: url(../img/logo-dark.png);
+}
+.parallax-2 {
+	background-image: url(../img/06.jpg);
+}
+
+ /* Comman to all parallax */
+.parallax-1,
+.parallax-2 {
+	background-position: 40% 0;
+	 background-size: cover;
+	 background-repeat: no-repeat;
+	 background-attachment: fixed;
+	 width: 100%;
+	 height: 100%;
+	 overflow-x: hidden;
+	 overflow-y: hidden;
+	 /* vertical-align: middle; */
+	 z-index: -1;
+	 display: block;
+	 position: relative;
+	 opacity: 1;
+}
+
+/* .parallax-1:after,
+.parallax-2:after {
+	content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: -1;   
+} */
+@media (max-width: 767px) {
+	.parallax-1 {
+		background-image: url(../img/logo-dark-mobile.png);		
+	}
+	.parallax-2 {
+		background-image: url(../img/06.jpg);
+	}
+	.parallax-1,
+	.parallax-2 {
+		background-position: 30% 0;
+		background-size: cover;
+		background-repeat: no-repeat;
+		background-attachment: fixed;
+		width: 100%;
+		height: 100%;
+		overflow-x: scroll;
+		overflow-y: hidden;
+		/* vertical-align: middle; */
+		/* z-index: 1; */
+		display: block;
+		/* position: relative; */
+		/* opacity: 1; */
+	}
+}
+/* ########### Parallax End ######### */

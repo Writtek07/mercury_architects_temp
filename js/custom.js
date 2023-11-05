@@ -146,5 +146,11 @@ jQuery(document).ready(function($) {
 				type: 'image'
 				// other options
 			});
+
+	
+	if(!Modernizr.touch){
+		$('.parallax-1').parallax("70%", 0.2);
+		$('.parallax-1').parallax("80%", 0.5);
+	}
 			 
 });
