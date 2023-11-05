@@ -149,8 +149,8 @@ jQuery(document).ready(function($) {
 
 	
 	if(!Modernizr.touch){
-		$('.parallax-1').parallax("70%", 0.2);
-		$('.parallax-1').parallax("80%", 0.5);
+		$('.parallax-1').parallax("70%", 0.4);
+		$('.parallax-2').parallax("80%", 0.5);
 	}
 			 
 });
