@@ -1877,7 +1877,8 @@ span.color {
 }
 /* ########### Parallax Starts ######### */
 .parallax-1 {
-	background-image: url(../img/logo-dark.png);
+	/* background-image: url(../img/logo-dark.png); */
+	background-image: url(../img/bg-parallax-1.jpg);
 }
 .parallax-2 {
 	background-image: url(../img/06.jpg);
@@ -1886,7 +1887,7 @@ span.color {
  /* Comman to all parallax */
 .parallax-1,
 .parallax-2 {
-	background-position: 20% 0;
+	background-position: 10% 0;
 	 background-size: cover;
 	 background-repeat: no-repeat;
 	 background-attachment: fixed;
@@ -1913,14 +1914,18 @@ span.color {
 } */
 @media (max-width: 767px) {
 	.parallax-1 {
-		background-image: url(../img/logo-dark-mobile.png);		
+		background-image: url(../img/bg-parallax-1.jpg);		
+	}
+	.parallax-1 p {
+		color: black;
+		font-size: 16px;
 	}
 	.parallax-2 {
 		background-image: url(../img/06-mobile.jpg);
 	}
 	.parallax-1,
 	.parallax-2 {
-		background-position: 30% 0;
+		background-position: 20% 0;
 		background-size: cover;
 		background-repeat: no-repeat;
 		background-attachment: fixed;
