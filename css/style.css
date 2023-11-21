@@ -1941,3 +1941,8 @@ span.color {
 	}
 }
 /* ########### Parallax End ######### */
+@media (max-width: 767px) {
+	.phone-widget {
+		text-align: center !important;
+	}
+}
