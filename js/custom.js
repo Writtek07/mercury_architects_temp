@@ -161,7 +161,7 @@ jQuery(document).ready(function($) {
 		const formData = new FormData(this);
 	
 		// Send a POST request to the server
-		fetch('http://localhost:3000/submit_form', {
+		fetch('https://form-submit-api.onrender.com/submit_form', {
 			method: 'POST',
 			body: formData,
 		})
