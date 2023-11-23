@@ -170,7 +170,7 @@ jQuery(document).ready(function($) {
 				"Content-Type": "application/json",
 				redirect: "follow",
 				referrerPolicy: "no-referrer",
-				body: formData,
+				body: JSON.stringify(formData),
 			}		
 		})		
 		.then(response => response.text())
