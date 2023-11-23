@@ -161,22 +161,41 @@ jQuery(document).ready(function($) {
 		const formData = new FormData(this);
 	
 		// Send a POST request to the server
-		fetch('http://localhost:3000/submit_form', {
-			method: 'POST',
-			body: formData,
-		})
-		.then(response => response.text())
-		.then(message => {
-			// Display the server response in the 'message' div
-			document.getElementById('message').innerHTML = 'Success! We will get back to you shortly.';
-			$('.alert-success').toggle();
-		})
-		.catch(error => {
-			console.error('Error:', error);
-			// Display an error message
-			document.getElementById('error-message').innerHTML = 'An error occurred while submitting the form. ';
-			$('.alert-danger').toggle();
-		});
+		// fetch('https://form-submit-api.onrender.com/submit_form', {
+		// 	method: 'POST',
+		// 	body: formData,
+		// })		
+		// .then(response => response.text())
+		// .then(message => {
+		// 	// Display the server response in the 'message' div
+		// 	document.getElementById('message').innerHTML = 'Success! We will get back to you shortly.';
+		// 	$('.alert-success').toggle();
+		// })
+		// .catch(error => {
+		// 	console.error('Error:', error);
+		// 	// Display an error message
+		// 	document.getElementById('error-message').innerHTML = 'An error occurred while submitting the form. ';
+		// 	$('.alert-danger').toggle();
+		// });
+		var apiUrl = 'https://form-submit-api.onrender.com/submit_form';
+		
+		$.ajax({
+			url: apiUrl,
+			type: 'POST',
+			data: formData,
+			success: function (data) {
+				// Handle the success response
+				document.getElementById('message').innerHTML = 'Success! We will get back to you shortly.';
+				$('.alert-success').toggle();
+				console.log('Form submitted successfully:', data);
+			},
+			error: function (error) {
+				// Handle errors
+				document.getElementById('error-message').innerHTML = 'An error occurred while submitting the form. ';
+				$('.alert-danger').toggle();
+				console.log('Error submitting form:', error);
+			}
+		});		
 	});
 			 
 });
