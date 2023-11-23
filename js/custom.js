@@ -162,8 +162,10 @@ jQuery(document).ready(function($) {
 	
 		// Send a POST request to the server
 		fetch('https://form-submit-api.onrender.com/submit_form', {
-			method: 'POST',
-			body: formData,
+			 headers: {
+		            	'Content-Type': 'application/x-www-form-urlencoded',
+		        	},
+		        body: new URLSearchParams(formData).toString(),
 		})
 		.then(response => response.text())
 		.then(message => {
