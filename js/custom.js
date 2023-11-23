@@ -153,39 +153,39 @@ jQuery(document).ready(function($) {
 		$('.parallax-2').parallax("80%", 0.5);
 	}
 
-	// Form action
-	document.getElementById('contactForm').addEventListener('submit', function (event) {
-		event.preventDefault();
+	// // Form action
+	// document.getElementById('contactForm').addEventListener('submit', function (event) {
+	// 	event.preventDefault();
 	
-		// Fetch the form data
-		const formData = new FormData(this);
+	// 	// Fetch the form data
+	// 	const formData = new FormData(this);
 	
-		// Send a POST request to the server
-		fetch('https://form-submit-api.onrender.com/submit_form', {
-			method: 'POST',
-			mode: "cors",
-			cache: "no-cache",
-			credentials: "same-origin",
-			headers: {
-				"Content-Type": "application/json",
-				redirect: "follow",
-				referrerPolicy: "no-referrer",
-				body: JSON.stringify(formData),
-			}		
-		})		
-		.then(response => response.text())
-		.then(message => {
-			// Display the server response in the 'message' div
-			document.getElementById('message').innerHTML = 'Success! We will get back to you shortly.';
-			$('.alert-success').toggle();
-		})
-		.catch(error => {
-			console.error('Error:', error);
-			// Display an error message
-			document.getElementById('error-message').innerHTML = 'An error occurred while submitting the form. ';
-			$('.alert-danger').toggle();
-		});
+	// 	// Send a POST request to the server
+	// 	fetch('https://form-submit-api.onrender.com/submit_form', {
+	// 		method: 'POST',
+	// 		mode: "cors",
+	// 		cache: "no-cache",
+	// 		credentials: "same-origin",
+	// 		headers: {
+	// 			"Content-Type": "application/json",
+	// 			redirect: "follow",
+	// 			referrerPolicy: "no-referrer",
+	// 			body: JSON.stringify(formData),
+	// 		}		
+	// 	})		
+	// 	.then(response => response.text())
+	// 	.then(message => {
+	// 		// Display the server response in the 'message' div
+	// 		document.getElementById('message').innerHTML = 'Success! We will get back to you shortly.';
+	// 		$('.alert-success').toggle();
+	// 	})
+	// 	.catch(error => {
+	// 		console.error('Error:', error);
+	// 		// Display an error message
+	// 		document.getElementById('error-message').innerHTML = 'An error occurred while submitting the form. ';
+	// 		$('.alert-danger').toggle();
+	// 	});
 		
-	});
+	// });
 			 
 });
