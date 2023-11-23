@@ -351,12 +351,17 @@
                                     <p class="help-block"></p>
                                 </div>
                                 <div class="input-field"> 
-                                    <input type="email" class="form-control text-white" id="email" required
+                                    <input type="email" name="email" class="form-control text-white" id="email" required
                                         data-validation-required-message="Please enter your email" /> 
                                     <label for="name" class="text-white">   Email </label> 
                                 </div>
                                 <div class="input-field"> 
-                                    <textarea rows="10" cols="100" required class="form-control text-white materialize-textarea" 
+                                    <input type="text" name="phone" class="form-control text-white" id="phone" required
+                                        data-validation-required-message="Please enter your phone" /> 
+                                    <label for="phone" class="text-white">   Phone </label> 
+                                </div>
+                                <div class="input-field"> 
+                                    <textarea rows="10" cols="100" name="message" required class="form-control text-white materialize-textarea" 
                                         idation-required-message="Please enter your message" minlength="5" 
                                         data-validation-minlength-message="Min 5 characters" 
                                         maxlength="999" style="resize:none"></textarea>
