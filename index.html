@@ -517,6 +517,41 @@
         <script src="js/jquery.magnific-popup.min.js"></script>
         <script src="js/animate.js"></script> 
         <script src="js/parallax.min.js"></script>  
-        <script src="js/custom.js"></script>        
+        <script src="js/custom.js"></script>
+        <script>
+            $(document).ready(function () {
+                $('#contactForm').submit(function (e) {
+                    // Prevent the default form submission
+                    e.preventDefault();
+    
+                    // Create a FormData object to hold the form data
+                    var formData = new FormData(this);
+    
+                    // Replace 'your-api-endpoint' with the actual endpoint of your Rails API
+                    var apiUrl = 'https://form-submit-api.onrender.com/submit_form';
+    
+                    // Make an AJAX request to submit the form data
+                    $.ajax({
+                        url: apiUrl,
+                        type: 'POST',
+                        data: formData,
+                        processData: false,
+                        contentType: false,
+                        success: function (data) {
+                            // Handle the success response
+                            console.log('Form submitted successfully:', data);
+                            document.getElementById('message').innerHTML = 'Success! We will get back to you shortly.';
+	                		$('.alert-success').toggle();
+                        },
+                        error: function (error) {
+                            // Handle errors
+                            console.log('Error submitting form:', error);
+                            document.getElementById('error-message').innerHTML = 'An error occurred while submitting the form. ';
+	                        $('.alert-danger').toggle();
+                        }
+                    });
+                });
+            });
+        </script>        
     </body>
 </html>
