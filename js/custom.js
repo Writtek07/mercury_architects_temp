@@ -158,9 +158,7 @@ jQuery(document).ready(function($) {
 		event.preventDefault();
 	
 		// Fetch the form data
-		// const formData = new FormData(this);
-		const records = new FormData(this);
-		const formData = records.serialize();
+		const formData = new FormData(this);		
 	
 		// Send a POST request to the server
 		// fetch('https://form-submit-api.onrender.com/submit_form', {
