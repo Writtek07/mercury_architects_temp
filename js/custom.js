@@ -161,7 +161,7 @@ jQuery(document).ready(function($) {
 		const formData = new FormData(this);
 	
 		// Send a POST request to the server
-		fetch('http://your-ec2-instance-ip-or-domain/submit_form', {
+		fetch('http://localhost:3000/submit_form', {
 			method: 'POST',
 			body: formData,
 		})
@@ -174,7 +174,7 @@ jQuery(document).ready(function($) {
 		.catch(error => {
 			console.error('Error:', error);
 			// Display an error message
-			document.getElementById('error-message').innerHTML = 'An error occurred while submitting the form. Please retry! ';
+			document.getElementById('error-message').innerHTML = 'An error occurred while submitting the form. ';
 			$('.alert-danger').toggle();
 		});
 	});
