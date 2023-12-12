@@ -2,14 +2,14 @@
 <html lang="en">
     <head>
         <!-- Google tag (gtag.js) -->
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-7TMH43JQP8"></script>
+        <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-7TMH43JQP8"></script>
         <script>
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
 
         gtag('config', 'G-7TMH43JQP8');
-        </script>
+        </script> -->
         <meta charset="utf-8">
         <title>TheMercuryArchitects- Crafting Dreams to reality!</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -522,15 +522,11 @@
             $(document).ready(function () {
                 $('#contactForm').submit(function (e) {
                     // Prevent the default form submission
-                    e.preventDefault();
-    
-                    // Create a FormData object to hold the form data
-                    var formData = new FormData(this);
-    
-                    // Replace 'your-api-endpoint' with the actual endpoint of your Rails API
-                    var apiUrl = 'https://form-submit-api.onrender.com/submit_form';
-    
-                    // Make an AJAX request to submit the form data
+                    e.preventDefault();                    
+                    var formData = new FormData(this);                    
+                    // var apiUrl = 'https://form-submit-api.onrender.com/submit_form';
+                    var apiUrl = 'https://formseasy.com/submit_form?api_key=6F5aBxrXAA3cu1uXS5kWfgtt';
+                    
                     $.ajax({
                         url: apiUrl,
                         type: 'POST',
