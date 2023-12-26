@@ -378,6 +378,7 @@
                                         maxlength="999" style="resize:none"></textarea>
                                     <label for="name" class="text-white">   Message </label> 
                                 </div>
+				<input type="hidden" name="api_key" value="qnL6HVM5QRjNDsLQ8lLGqgtt">
                                 <!-- <div id="success"> </div>                                 -->
                                 <button type="submit" class="btn btn-primary waves-effect waves-dark pull-right">Send</button><br />
                             </form>                         
@@ -525,7 +526,7 @@
                     e.preventDefault();                    
                     var formData = new FormData(this);                    
                     //var apiUrl = 'https://form-submit-api.onrender.com/submit_form';
-                    var apiUrl = 'https://www.formseasy.com/submit_form?api_key=qnL6HVM5QRjNDsLQ8lLGqgtt';
+                    var apiUrl = 'https://www.formseasy.com/submit_form;
                     
                     $.ajax({
                         url: apiUrl,
