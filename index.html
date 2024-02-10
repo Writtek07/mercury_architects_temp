@@ -548,36 +548,7 @@
 	               //          $('.alert-danger').toggle();
                 //         }
                 //     });
-                // })
-		$('#contactform').submit(function(event) {
-		    // Prevent the default form submission
-		    event.preventDefault();
-	
-		    // Serialize the form data
-		    var formData = $(this).serialize();
-	
-		    // Submit the form data asynchronously using AJAX
-		    $.ajax({
-			type: 'POST',
-			url: $(this).attr('action'),
-			data: formData,
-			success: function(response) {
-			    // Handle the successful response
-			    // You can display a success message and redirect here
-			    $('#message').html('<p>Form submitted successfully!</p>');
-			    // Reload the page after a delay (you can adjust the delay as needed)
-			    setTimeout(function() {
-				location.reload();
-			    }, 2000); // 2000 milliseconds = 2 seconds
-			},
-			error: function(xhr, status, error) {
-			    // Handle any errors
-			    console.error(xhr.responseText);
-			    $('#message').html('<p>An error occurred while submitting the form.</p>');
-			}
-		    });
-		});
-	    });
+                // })	
             });
         </script>        
     </body>
