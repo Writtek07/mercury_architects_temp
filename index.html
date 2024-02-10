@@ -353,7 +353,8 @@
                             <script type="text/javascript"> function init_map(){var myOptions = {zoom:14,center:new google.maps.LatLng(21.250000, 81.629997),mapTypeId: google.maps.MapTypeId.ROADMAP};map = new google.maps.Map(document.getElementById("gmap_canvas"), myOptions);marker = new google.maps.Marker({map: map,position: new google.maps.LatLng(21.250000, 81.629997)});infowindow = new google.maps.InfoWindow({content:"<b>The Mercury</b><br/><b>Architects</b><br/> Raipur" });google.maps.event.addListener(marker, "click", function(){infowindow.open(map,marker);});infowindow.open(map,marker);}google.maps.event.addDomListener(window, 'load', init_map);</script> -->                            
                             <!-- <p> </p> -->
                             <!-- Form itself -->                                                 
-                            <form name="sentMessage" id="contactform" action="https://formseasy.com/form_submits" method="POST">
+                            <!-- <form name="sentMessage" id="contactform" action="https://formseasy.com/form_submits" method="POST"> -->
+			    <form name="sentMessage" id="contactForm">
                                 <div class="input-field">
                                     <input type="text" name="name" class="form-control text-white" 
                                         id="name" required
@@ -520,35 +521,35 @@
         <script src="js/parallax.min.js"></script>  
         <script src="js/custom.js"></script>
         <script>
-            //$(document).ready(function () {
-                //$('#contactForm').submit(function (e) {
+            $(document).ready(function () {
+                $('#contactForm').submit(function (e) {
                     // Prevent the default form submission
-                    //e.preventDefault();                    
-                    //var formData = new FormData(this);                    
+                    e.preventDefault();                    
+                    var formData = new FormData(this);                    
                     //var apiUrl = 'https://form-submit-api.onrender.com/submit_form';
-                    //var apiUrl = 'https://formseasy.com/form_submits';
+                    var apiUrl = 'https://formseasy.com/form_submits';
                     
-                    //$.ajax({
-                        //url: apiUrl,
-                        //type: 'POST',
-                        //data: formData,
-                        //processData: false,
-                        //contentType: false,
-                        //success: function (data) {
+                    $.ajax({
+                        url: apiUrl,
+                        type: 'POST',
+                        data: formData,
+                        processData: false,
+                        contentType: false,
+                        success: function (data) {
                             // Handle the success response
-                            //console.log('Form submitted successfully:', data);
-                            //document.getElementById('message').innerHTML = 'Success! We will get back to you shortly.';
-	                		//$('.alert-success').toggle();
-                        //},
-                        //error: function (error) {
+                            console.log('Form submitted successfully:', data);
+                            document.getElementById('message').innerHTML = 'Success! We will get back to you shortly.';
+	                		$('.alert-success').toggle();
+                        },
+                        error: function (error) {
                             // Handle errors
-                            //console.log('Error submitting form:', error);
-                            //document.getElementById('error-message').innerHTML = 'An error occurred while submitting the form. ';
-	                        //$('.alert-danger').toggle();
-                        //}
-                    //});
-                //})
-            //});
+                            console.log('Error submitting form:', error);
+                            document.getElementById('error-message').innerHTML = 'An error occurred while submitting the form. ';
+	                        $('.alert-danger').toggle();
+                        }
+                    });
+                })
+            });
         </script>        
     </body>
 </html>
