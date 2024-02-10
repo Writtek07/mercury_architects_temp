@@ -354,7 +354,7 @@
                             <!-- <p> </p> -->
                             <!-- Form itself -->                                                 
                             <!-- <form name="sentMessage" id="contactform" action="https://formseasy.com/form_submits" method="POST"> -->
-			    <form name="sentMessage" id="contactForm">
+			    <form name="sentMessage" id="contactform" action="https://formseasy.com/form_submits" method="POST">
                                 <div class="input-field">
                                     <input type="text" name="name" class="form-control text-white" 
                                         id="name" required
@@ -522,33 +522,62 @@
         <script src="js/custom.js"></script>
         <script>
             $(document).ready(function () {
-                $('#contactForm').submit(function (e) {
-                    // Prevent the default form submission
-                    e.preventDefault();                    
-                    var formData = new FormData(this);                    
-                    //var apiUrl = 'https://form-submit-api.onrender.com/submit_form';
-                    var apiUrl = 'https://formseasy.com/form_submits';
+                // $('#contactForm').submit(function (e) {
+                //     // Prevent the default form submission
+                //     e.preventDefault();                    
+                //     var formData = new FormData(this);                    
+                //     //var apiUrl = 'https://form-submit-api.onrender.com/submit_form';
+                //     var apiUrl = 'https://formseasy.com/form_submits';
                     
-                    $.ajax({
-                        url: apiUrl,
-                        type: 'GET',
-                        data: formData,
-                        processData: false,
-                        contentType: false,
-                        success: function (data) {
-                            // Handle the success response
-                            console.log('Form submitted successfully:', data);
-                            document.getElementById('message').innerHTML = 'Success! We will get back to you shortly.';
-	                		$('.alert-success').toggle();
-                        },
-                        error: function (error) {
-                            // Handle errors
-                            console.log('Error submitting form:', error);
-                            document.getElementById('error-message').innerHTML = 'An error occurred while submitting the form. ';
-	                        $('.alert-danger').toggle();
-                        }
-                    });
-                })
+                //     $.ajax({
+                //         url: apiUrl,
+                //         type: 'GET',
+                //         data: formData,
+                //         processData: false,
+                //         contentType: false,
+                //         success: function (data) {
+                //             // Handle the success response
+                //             console.log('Form submitted successfully:', data);
+                //             document.getElementById('message').innerHTML = 'Success! We will get back to you shortly.';
+	               //  		$('.alert-success').toggle();
+                //         },
+                //         error: function (error) {
+                //             // Handle errors
+                //             console.log('Error submitting form:', error);
+                //             document.getElementById('error-message').innerHTML = 'An error occurred while submitting the form. ';
+	               //          $('.alert-danger').toggle();
+                //         }
+                //     });
+                // })
+		$('#contactform').submit(function(event) {
+		    // Prevent the default form submission
+		    event.preventDefault();
+	
+		    // Serialize the form data
+		    var formData = $(this).serialize();
+	
+		    // Submit the form data asynchronously using AJAX
+		    $.ajax({
+			type: 'POST',
+			url: $(this).attr('action'),
+			data: formData,
+			success: function(response) {
+			    // Handle the successful response
+			    // You can display a success message and redirect here
+			    $('#message').html('<p>Form submitted successfully!</p>');
+			    // Reload the page after a delay (you can adjust the delay as needed)
+			    setTimeout(function() {
+				location.reload();
+			    }, 2000); // 2000 milliseconds = 2 seconds
+			},
+			error: function(xhr, status, error) {
+			    // Handle any errors
+			    console.error(xhr.responseText);
+			    $('#message').html('<p>An error occurred while submitting the form.</p>');
+			}
+		    });
+		});
+	    });
             });
         </script>        
     </body>
